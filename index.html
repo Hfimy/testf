@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      function fixFontSize() {
+        var userAgent = window.navigator.userAgent.toLowerCase();
+        document.querySelector('h1').innerHTML = userAgent;
+        var currentWidth = document.documentElement.getBoundingClientRect()
+          .width;
+        if (currentWidth > 750) currentWidth = 750;
+        if (currentWidth < 320) currentWidth = 320;
+
+        // 小米mix2,mix2s 缩小1.3  微信环境下正常
+        if (/mix 2 build/i.test(userAgent) || /mix 2s build/i.test(userAgent)) {
+          document.documentElement.style.fontSize =
+            ((currentWidth / 375) * 16) / 1.3 + 'px';
+          return;
+        }
+      }
+      fixFontSize();
+    </script>
+  </body>
+</html>
