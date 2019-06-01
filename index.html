@@ -31,6 +31,8 @@
     <script>
       function fixFontSize() {
         var userAgent = window.navigator.userAgent.toLowerCase();
+
+        alert(document.documentElement.style.fontSize);
         // document.querySelector('h1').innerHTML = userAgent;
         var currentWidth = document.documentElement.getBoundingClientRect()
           .width;
