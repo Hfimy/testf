@@ -5,15 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <style>
+      .wrapper {
+        background: #ffe8ef;
+        box-sizing: border-box;
+        position: relative;
+      }
+      img {
+        display: inline-block;
+        width: 354px;
+        height: 74px;
+      }
+    </style>
   </head>
   <body>
     <h1></h1>
+    <h1></h1>
+    <div class="wrapper">
+      <img
+        src="https://s1.xmcdn.com/sr012018/xxm-h5/last/dist/image/pic_order_finish_inlet.f68381f4.png"
+        alt=""
+      />
+    </div>
     <script>
       function fixFontSize() {
         var userAgent = window.navigator.userAgent.toLowerCase();
-        document.querySelector('h1').innerHTML = userAgent;
+        // document.querySelector('h1').innerHTML = userAgent;
         var currentWidth = document.documentElement.getBoundingClientRect()
           .width;
+        alert(currentWidth);
+        alert(((currentWidth / 375) * 16) / 1.3);
+        alert(((currentWidth / 375) * 16) / 1.2);
         if (currentWidth > 750) currentWidth = 750;
         if (currentWidth < 320) currentWidth = 320;
 
